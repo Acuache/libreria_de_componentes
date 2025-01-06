@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+    background-color: #222;
+}
+.button-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    padding: 20px 50px;
+    font-size: 50px;
+    letter-spacing: 15px;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 15px;
+    position: relative;
+}
+
+/*  EfectoNeon */
+.btn {
+    border:  3px solid #fff3;
+    color: #fff3;
+}
+.btn:hover{
+    animation: parpadear .8s infinite alternate both;
+}
+@keyframes parpadear {
+    0% {
+        color: #48e;
+        border: 3px solid #48e;
+        box-shadow: none;
+        text-shadow: none;
+    }
+    15%{
+        box-shadow: 0 0 10px #48e3, 0 0 20px #48e5, 0 0 35px #48ec;
+    }
+    35%{
+        color: #48e;
+        border: 3px solid #48e;
+        box-shadow: none;
+        text-shadow: none;
+    }
+    65%{
+        box-shadow: 0 0 10px #48e3, 0 0 20px #48e5, 0 0 35px #48ec;
+        text-shadow: 0 0 10px #48ee, 0 0 20px #48ea;
+    }
+    90%{
+        color: #48e;
+        border: 3px solid #48e;
+        box-shadow: none;
+        text-shadow: none;
+    }
+    100%{
+        text-shadow: 0 0 10px #48ee, 0 0 20px #48ea;
+    }
+}
+
+/*2 Rallas*/
+.btn::before{
+    content: "";  /*Recordar ponerlo*/
+    width: 0%;
+    height: 2px;
+    display: block;
+    position: absolute;
+
+    /*Mover las lineas en el medio*/
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    top: -50px;
+    opacity: 0;
+    transition: top .6s, 
+                opacity .45s,
+                width .5s;;
+
+    animation: linea--parpadear 1s infinite alternate both;
+}
+
+.btn:hover::before{
+    width: 70%;
+    top: -15px;
+    opacity: 0.5;
+}
+
+@keyframes linea--parpadear {
+    0% {
+        box-shadow: none;
+        background-color: #fff3;
+    }
+    15%{
+        background-color: #48e;
+        box-shadow: 0 0 10px #48e, 0 0 20px #48ea, 0 0 30px #48eb;
+    }
+    35%{
+        box-shadow: none;
+        background-color: #fff3;
+    }
+    65%{
+        background-color: #48e;
+        box-shadow: 0 0 10px #48e, 0 0 20px #48ea, 0 0 30px #48eb;
+    }
+    90%{
+        box-shadow: none;
+        background-color: #fff3;
+    }
+    100%{
+        background-color: #48e;
+        box-shadow: 0 0 10px #48e, 0 0 20px #48ea, 0 0 30px #48eb;
+    }
+}
+
+.btn::after{
+    content: "";  /*Recordar ponerlo*/
+    width: 0%;
+    height: 2px;
+    display: block;
+    position: absolute;
+
+    /*Mover las lineas en el medio*/
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    top: -50px;
+    opacity: 0;
+    transition: top .6s, 
+                opacity .45s,
+                width .5s;
+
+    animation: linea--parpadear 1s infinite alternate-reverse both;
+}
+
+.btn:hover::after{
+    width: 40%;
+    top: -25px;
+    opacity: 0.5;
+}
+
+/*Encontrar mejoras, sabiendo que hay diferencincias de width y top
+Una mejor manera es .btn:is(::before, ::after)*/
