@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login Acuache</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="layout">
+        <video src="videoBucle.mp4" muted autoplay loop></video>
+
+        <main class="layout__main">
+            <section class="main__perfil">
+                <div class="perfil__container">
+                    <i class="container__img fa-solid fa-user"></i>
+                </div>
+                <h1 class="perfil__title">Member Login</h1>
+            </section>
+            <form class="main__form">
+                <div class="form__container">
+                    <i class="container__ico fa-solid fa-user"></i>
+                    <input class="form__input" id="input__login" type="text" placeholder="Username">
+                </div>
+                <div class="form__container">
+                    <i class="container__ico fa-solid fa-lock"></i>
+                    <input class="form__input" id="input__password" type="password" placeholder="Password">
+                </div>
+                <div class="form__option">
+                    <div class="option__remember">
+                        <input class="remember__checkbox" id="remember__checkbox" type="checkbox">
+                        <label for="remember__checkbox">Remember me</label>
+                    </div>
+                    <a class="option__forgot" href="#">Forgot password?</a>
+                </div>
+                <button class="form__button form__input" id="btn__start" type="submit">Login</button>
+            </form>
+            <section class="main__footer">
+                <p class="footer__text">Not a member?</p>
+                <a class="footer__link" href="#">Create an account</a>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
